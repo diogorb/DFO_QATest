@@ -1,0 +1,5 @@
+Author: Diogo Barbosa
+This project was made as a technical challenge; i made a simple API to make the backend to User API, using in memory database.
+This is a very simple project composed of an API that creates users with only 4 fields (Id, Name, Age, Address), being: ID a primary key / identity (using annotation key in the code), Name is a required field (not null), Age also a required field and Address is nullable.
+Name and Address should be limited to 50 charachters, what was accomplished by the [StringLength(50)] annotation.
+The Crud operations are documented in Postman collection at this same folder, accomplishing and testing the requested validations.

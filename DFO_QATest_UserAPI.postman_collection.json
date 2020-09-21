@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "bd075c62-397b-4ed9-abf7-8a6ed87ee5a5",
+		"name": "DFO_QATest_UserAPI",
+		"description": "DFO QATest UserAPI ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"UserName com até 50 char!\",\r\n  \"age\":36,\r\n  \"address\":\"Rua da realização, colado com o desafio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44384/api/users",
+				"description": "Creates an user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:44384/api/Users/1",
+				"description": "Get User By ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\":\"User otimista\",\r\n  \"Age\": 36,\r\n  \"address\":\"Rua do esforço, caminho do sucesso.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44384/api/Users/1",
+				"description": "Update User"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:44384/api/Users",
+				"description": "Get Users "
+			},
+			"response": []
+		},
+		{
+			"name": "Update User without age ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\":\"User otimista\",\r\n  \"address\":\"Rua do esforço, caminho do sucesso.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44384/api/Users/1",
+				"description": "To validate range of age "
+			},
+			"response": []
+		},
+		{
+			"name": "Update User with name bigger than 50char",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"name\":\"User otimista, User otimista, User otimista, User otimista, User otimista\",\r\n  \"Age\": 36,\r\n  \"address\":\"Rua do esforço, caminho do sucesso.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:44384/api/Users/1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
